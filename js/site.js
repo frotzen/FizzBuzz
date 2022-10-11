@@ -1,8 +1,7 @@
-//
 // 3 Functions for Fizz Buzz
-//  getValues() - retrieve <input> values
+//  getValues() - retrieve input element values
 //  generateFizzBuzz() - create the factor dependent states
-//  displayFizzBuzz() - format <tr><td> statefully re fizzbuzz
+//  displayFizzBuzz() - format tr & td statefully
 
 function getValues() {
   let firstFactor = document.getElementById("firstFactor").value;
