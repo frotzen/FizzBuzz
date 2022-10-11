@@ -1,6 +1,8 @@
 //
-// Functions for Fizz Buzz
-//
+// 3 Functions for Fizz Buzz
+//  getValues() - retrieve <input> values
+//  generateFizzBuzz() - create the factor dependent states
+//  displayFizzBuzz() - format <tr><td> statefully re fizzbuzz
 
 function getValues() {
   let firstFactor = document.getElementById("firstFactor").value;
@@ -38,35 +40,27 @@ function generateFizzBuzz(first, second, stop) {
   return alNumArray;
 }
 
-// function displayFizzBuzz(items) {
-//   let length = items.length;
-//   let templateRows = "";
-//   for (let i = 0; i < length; i++) {
-//     let number = items[i];
-//     templateRows += `<tr><td>${number}</td></tr>`;
-//   }
-//   document.getElementById("results").innerHTML = templateRows;
-// }
-
 function displayFizzBuzz(items) {
   let length = items.length;
   let className = "nonFactor";
   let templateRows = "";
   for (let i = 0; i < length; i++) {
-    let number = items[i];
+    let alphaNum = items[i];
 
-    if (number == "Fizz") {
+    // handle bootstrap class dynamics
+    if (alphaNum == "Fizz") {
       className = "bg-warning";
-    } else if (number == "Buzz") {
+    } else if (alphaNum == "Buzz") {
       className = "bg-dark text-light";
-    } else if (number == "FizzBuzz") {
+    } else if (alphaNum == "FizzBuzz") {
       className = "bg-danger text-warning";
-    } else className = "table-";
+    } else className = "";
 
+    // add <tr> and </tr> at start and end locations per line
     if (i % 5 == 0) {
       templateRows += "<tr>";
     }
-    templateRows += `<td class="${className}"> ${number} </td>`;
+    templateRows += `<td class="${className}"> ${alphaNum} </td>`;
 
     if ((i + 1) % 10 == 0) {
       templateRows += "</tr>";

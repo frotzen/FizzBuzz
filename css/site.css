@@ -75,21 +75,3 @@ footer {
 .appLogo {
   max-width: 400px;
 }
-
-.fizzFactor {
-  background-color: var(--eb-secondary-color);
-  color: var(--eb-primary-color);
-}
-
-.buzzFactor {
-  background-color: var(--eb-primary-color);
-  color: var(--eb-secondary-color);
-}
-
-.nonFactor {
-}
-
-.fizzBuzzFactor {
-  background-color: var(--eb-dark-color);
-  color: var(--eb-light-color);
-}
