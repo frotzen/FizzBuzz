@@ -1,11 +1,12 @@
 :root {
-  --eb-primary-color: #001e43;
+  --eb-primary-color: #bf8c00;
   --eb-secondary-color: #ff993b;
   --eb-dark-color: #292929;
   --eb-light-color: #dfe3e4;
 
-  --eb-navbar-toggler-glow: rgba(255, 153, 59, 0.5);
-  --eb-navbar-toggler-color: #ff993b;
+  --eb-navbar-toggler-glow: #ffee00;
+  ;
+  --eb-navbar-toggler-color: #cdc000;
 }
 
 html,
@@ -47,7 +48,7 @@ footer {
 }
 
 #mainNav button {
-  border-color: var(--eb-secondary-color);
+  border-color: var(--eb-navbar-toggler-color);
 }
 
 .navbar-toggler {

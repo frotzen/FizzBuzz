@@ -56,7 +56,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-end">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html"
+                <a class="nav-link" aria-current="page" href="index.html"
                   >Home</a
                 >
               </li>
@@ -64,10 +64,10 @@
                 <a class="nav-link" href="/app.html">The App</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/code.html">The Code</a>
+                <a class="nav-link active" href="/code.html">The Code</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">The Repo</a>
+                <a class="nav-link" href="https://github.com/frotzen/FizzBuzz">The Repo</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="">About</a>
@@ -85,83 +85,36 @@
       <div class="row">
         <h1 class="border-bottom border-2 border-danger">The Code</h1>
         <!-- Code Editor -->
-        <div class="col-12 col-lg-8">
-          <pre class="line-numbers">
-                <code class="language-js">
-                  // 3 Functions for Fizz Buzz
-                  //  getValues() - retrieve input element values
-                  //  generateFizzBuzz() - create the factor dependent states
-                  //  displayFizzBuzz() - format tr & td statefully
-                  
-                  function getValues() {
-                    let firstFactor = document.getElementById("firstFactor").value;
-                    let secondFactor = document.getElementById("secondFactor").value;
-                    let stopValue = document.getElementById("stopValue").value;
-                  
-                    firstFactor = parseInt(firstFactor);
-                    secondFactor = parseInt(secondFactor);
-                  
-                    if (Number.isInteger(firstFactor) && Number.isInteger(secondFactor)) {
-                      let numbers = generateFizzBuzz(firstFactor, secondFactor, stopValue);
-                      displayFizzBuzz(numbers);
-                    } else {
-                      Swal.fire({
-                        icon: "error",
-                        title: "Oops...",
-                        text: "Please enter only integers for first and second factors.",
-                      });
-                    }
+          <div class="col-12 col-lg-8">
+            <pre class="line-numbers">
+              <code class="language-js">
+                // 3 Functions for Fizz Buzz
+                //  getValues() - retrieve input element values
+                //  generateFizzBuzz() - create the factor dependent states
+                //  displayFizzBuzz() - format tr & td statefully
+                
+                function getValues() {
+                  let firstFactor = document.getElementById("firstFactor").value;
+                  let secondFactor = document.getElementById("secondFactor").value;
+                  let stopValue = document.getElementById("stopValue").value;
+                
+                  firstFactor = parseInt(firstFactor);
+                  secondFactor = parseInt(secondFactor);
+                
+                  if (Number.isInteger(firstFactor) && Number.isInteger(secondFactor)) {
+                    let numbers = generateFizzBuzz(firstFactor, secondFactor, stopValue);
+                    displayFizzBuzz(numbers);
+                  } else {
+                    Swal.fire({
+                      icon: "error",
+                      title: "Oops...",
+                      text: "Please enter only integers for first and second factors.",
+                    });
                   }
-                  
-                  function generateFizzBuzz(first, second, stop) {
-                    let alNumArray = [];
-                    for (let i = 1; i <= stop; i++) {
-                      if (i % first == 0 && i % second == 0) {
-                        alNumArray.push("FizzBuzz");
-                      } else if (i % first == 0) {
-                        alNumArray.push("Fizz");
-                      } else if (i % second == 0) {
-                        alNumArray.push("Buzz");
-                      } else {
-                        alNumArray.push(i);
-                      }
-                    }
-                    return alNumArray;
-                  }
-                  
-                  function displayFizzBuzz(items) {
-                    let length = items.length;
-                    let className = "nonFactor";
-                    let templateRows = "";
-                    for (let i = 0; i < length; i++) {
-                      let alphaNum = items[i];
-                  
-                      // handle bootstrap class dynamics
-                      if (alphaNum == "Fizz") {
-                        className = "bg-warning";
-                      } else if (alphaNum == "Buzz") {
-                        className = "bg-dark text-light";
-                      } else if (alphaNum == "FizzBuzz") {
-                        className = "bg-danger text-warning";
-                      } else className = "";
-                  
-                      // add <tr> and </tr> at start and end locations per line
-                      if (i % 5 == 0) {
-                        templateRows += "<tr>";
-                      }
-                      templateRows += `<td class="${className}"> ${alphaNum} </td>`;
-                  
-                      if ((i + 1) % 10 == 0) {
-                        templateRows += "</tr>";
-                      }
-                    }
-                  
-                    document.getElementById("results").innerHTML = templateRows;
-                  }
-                                       
-                </code>
+                }                    
+              </code>
             </pre>
-        </div>
+          </div>
         <!-- Code Docs -->
         <div class="col-12 col-lg-4">
           <p>The code is structured in three functions:</p>
@@ -169,18 +122,83 @@
           <p>
             Retrieves input element values as well as calling other functions.
           </p>
-          <h5>generateFizzBuzz()</h5>
-          <p>
-            Tests the factors over the range of numbers and creates an array of
-            the results.
+        </div>
+        <!-- Code Editor -->
+        <div class="col-12 col-lg-8">
+          <pre class="line-numbers">
+            <code class="language-js">
+              function generateFizzBuzz(first, second, stop) {
+                let alNumArray = [];
+                  for (let i = 1; i <= stop; i++) {
+                    if (i % first == 0 && i % second == 0) {
+                      alNumArray.push("FizzBuzz");
+                    } else if (i % first == 0) {
+                      alNumArray.push("Fizz");
+                    } else if (i % second == 0) {
+                      alNumArray.push("Buzz");
+                    } else {
+                      alNumArray.push(i);
+                    }
+                  }
+              return alNumArray;
+              }                  
+            </code>
+          </pre>
+        </div>
+        <!-- Code Docs -->
+        <div class="col-12 col-lg-4">
+            <h5>generateFizzBuzz()</h5>
+            <p>
+              Tests the factors over the range of numbers and creates an array of
+              the results.
           </p>
+        </div>
+        <!-- Code Editor -->
+        <div class="col-12 col-lg-8">
+          <pre class="line-numbers">
+            <code class="language-js">
+              function displayFizzBuzz(items) {
+                let length = items.length;
+                let className = "nonFactor";
+                let templateRows = "";
+
+                for (let i = 0; i < length; i++) {
+                  let alphaNum = items[i];
+                  
+                  // handle bootstrap class dynamics
+                  if (alphaNum == "Fizz") {
+                    className = "bg-warning";
+                  } else if (alphaNum == "Buzz") {
+                    className = "bg-dark text-light";
+                  } else if (alphaNum == "FizzBuzz") {
+                    className = "bg-danger text-warning";
+                  } else className = "";
+              
+                  // add <tr> and </tr> at start and end locations per line
+                  if (i % 5 == 0) {
+                    templateRows += "<tr>";
+                  }
+                  templateRows += `<td class="${className}"> ${alphaNum} </td>`;
+              
+                  if ((i + 1) % 10 == 0) {
+                    templateRows += "</tr>";
+                  }
+                }
+                  
+                document.getElementById("results").innerHTML = templateRows;
+              }                    
+            </code>
+          </pre>
+        </div>
+        <!-- Code Docs -->
+        <div class="col-12 col-lg-4">
           <h5>displayFizzBuzz()</h5>
           <p>
             Iterates over the array and statefully formats output for
             presentation.
           </p>
         </div>
-      </div>
+
     </main>
 
     <!-- Footer -->
@@ -194,9 +212,9 @@
             <img src="/img/EB_LogoWhite.png" height="24" />
           </div>
           <div class="col text-center text-lg-end">
-            <a href="#"><i class="bi bi-linkedin socialIcons"></i></a>
-            <a href="#"><i class="bi bi-twitter socialIcons"></i></a>
-            <a href="#"><i class="bi bi-github socialIcons"></i></a>
+            <a href="https://www.linkedin.com/in/elwin-beall/"><i class="bi bi-linkedin socialIcons"></i></a>
+            <a href="https://twitter.com/frotzen"><i class="bi bi-twitter socialIcons"></i></a>
+            <a href="https://github.com/frotzen"><i class="bi bi-github socialIcons"></i></a>
           </div>
         </div>
       </div>
