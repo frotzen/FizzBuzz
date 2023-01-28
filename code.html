@@ -185,14 +185,14 @@
                     className = "bg-danger text-warning";
                   } else className = "";
               
-                  // add <tr> and </tr> at start and end locations per line
+                  // wrap line of &lt;td> elements within &lt;tr> elements
                   if (i % 5 == 0) {
-                    templateRows += "<tr>";
+                    templateRows += "&lt;tr>";
                   }
-                  templateRows += `<td class="${className}"> ${alphaNum} </td>`;
+                  templateRows += `&lt;td class="${className}"> ${alphaNum} &lt;/td>`;
               
                   if ((i + 1) % 10 == 0) {
-                    templateRows += "</tr>";
+                    templateRows += "&lt;/tr>";
                   }
                 }
                   
