@@ -47,6 +47,7 @@ function displayFizzBuzz(items) {
     let alphaNum = items[i];
 
     // handle bootstrap class dynamics
+    // and colors
     if (alphaNum == "Fizz") {
       className = "bg-warning";
     } else if (alphaNum == "Buzz") {
